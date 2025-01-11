@@ -1,0 +1,4 @@
+body,
+html {
+  @apply font-mono;
+}

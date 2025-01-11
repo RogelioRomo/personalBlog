@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import IntroSection from "@components/home/IntroSection.astro";
+import BodyLayout from "@layouts/BodyLayout.astro";
+import PostHomeFeed from "@components/home/PostsHomeFeed.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <title>Rogelio Romo</title>
+  </head>
+  <body
+    class="bg-customBlack mx-auto flex flex-col min-h-screen max-w-3xl px-4 pt-16 text-sm antialiased sm:px-8"
+  >
+    <BodyLayout>
+      <IntroSection />
+      <PostHomeFeed />
+    </BodyLayout>
+  </body>
+</html>
