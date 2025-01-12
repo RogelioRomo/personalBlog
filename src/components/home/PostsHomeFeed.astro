@@ -1,15 +1,16 @@
 ---
+import TypedBlogPost from "@components/posts/TypedBlogPost.astro";
+import { getCollection } from "astro:content";
 
+const blogPosts = await getCollection("blog");
 ---
 
 <section class="mt-16">
-  <h2 class="mb-4 font-bold text-xl text-customGreen">Posts</h2>
+  <a class="font-bold text-xl text-customGreen" href="/blog"
+    ><h2 class="mb-4">Posts</h2></a
+  >
+
   <ul class="text-customGray flex flex-col gap-4">
-    <li class="flex flex-row">
-      <p class="mr-16">26 Oct 2024</p>
-      <a class="underline decoration-2 hover:decoration-customPink" href=""
-        >Link to post</a
-      >
-    </li>
+    {blogPosts.map((post) => <TypedBlogPost post={post} />)}
   </ul>
 </section>

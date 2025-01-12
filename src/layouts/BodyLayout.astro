@@ -1,10 +1,30 @@
 ---
 import FooterComponent from "@components/common/FooterComponent.astro";
 import HeaderComponent from "@components/common/HeaderComponent.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
 ---
 
-<HeaderComponent />
-<main>
-  <slot />
-</main>
-<FooterComponent />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-customBlack mx-auto flex flex-col min-h-screen max-w-3xl px-4 pt-16 text-sm antialiased sm:px-8"
+  >
+    <HeaderComponent />
+    <main>
+      <slot />
+    </main>
+    <FooterComponent />
+  </body>
+</html>

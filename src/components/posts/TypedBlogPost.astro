@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const frontmatter = post.data;
+---
+
+<li class="flex flex-row">
+  <p class="mr-16">{frontmatter.date}</p>
+  <a
+    class="underline decoration-2 hover:decoration-customPink"
+    href={`/posts/${post.slug}`}>{frontmatter.title}</a
+  >
+</li>
