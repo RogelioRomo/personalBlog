@@ -1,7 +1,6 @@
 body,
 html {
   @apply font-mono;
-  scroll-behavior: smooth;
 }
 
 article h2 {
