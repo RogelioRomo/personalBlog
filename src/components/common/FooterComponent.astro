@@ -3,28 +3,16 @@ const date = new Date().getFullYear();
 ---
 
 <footer
-  class="mt-auto flex flex-col w-full items-center justify-center gap-y-2 pb-4 pt-20 text-center align-top font-semibold text-gray-600 dark:text-gray-400 sm:flex-row sm:justify-between sm:text-xs"
+  class="mt-auto flex flex-col w-full items-center justify-center gap-y-2 pb-4 pt-18 text-center align-top font-semibold text-gray-600 dark:text-customBlack sm:flex-row sm:justify-between sm:text-xs"
 >
   <div class="me-0 sm:me-4">
     Rogelio Romo {date}.
     <span>Astro Build 🚀</span>
   </div>
   <nav class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500">
-    <a
-      class="px-4 py-2 sm:py-0 sm:hover:text-textColor sm:hover:underline"
-      href="/">Home</a
-    >
-    <a
-      class="px-4 py-2 sm:py-0 sm:hover:text-textColor sm:hover:underline"
-      href="/about">About</a
-    >
-    <a
-      class="px-4 py-2 sm:py-0 sm:hover:text-textColor sm:hover:underline"
-      href="/blog">Blog</a
-    >
-    <a
-      class="px-4 py-2 sm:py-0 sm:hover:text-textColor sm:hover:underline"
-      href="/notes">Notes</a
-    >
+    <a class="px-4 py-2 sm:py-0 hover:underline" href="/">Home</a>
+    <a class="px-4 py-2 sm:py-0 hover:underline" href="/about">About</a>
+    <a class="px-4 py-2 sm:py-0 hover:underline" href="/blog/1">Blog</a>
+    <a class="px-4 py-2 sm:py-0 hover:underline" href="/notes/1">Notes</a>
   </nav>
 </footer>

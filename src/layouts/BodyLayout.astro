@@ -19,12 +19,42 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="bg-customBlack mx-auto flex flex-col min-h-screen max-w-3xl px-4 pt-16 text-sm antialiased sm:px-8"
+    class="bg-customBlack dark:bg-[#ffffff] mx-auto flex flex-col min-h-screen max-w-3xl px-4 pt-16 text-sm antialiased sm:px-8"
   >
     <HeaderComponent />
     <main>
       <slot />
     </main>
     <FooterComponent />
+    <script>
+      const userTheme = localStorage.getItem("theme");
+      if (userTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else if (userTheme === "light") {
+        document.documentElement.classList.remove("dark");
+      }
+
+      const themeButton = document.getElementById("themeButton");
+      const sunIcon =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 6V3M8.929 8.929L6.808 6.808M6 16H3m13 13v-3m9.192-.808l-2.121-2.12M29 16h-3M8.929 23.071l-2.121 2.121M25.192 6.808l-2.12 2.121M22 16a6 6 0 1 1-12 0a6 6 0 0 1 12 0"/></svg>';
+      const moonIcon =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 256 256" class="fill-current"><path fill="currentColor" d="M238 96a6 6 0 0 1-6 6h-18v18a6 6 0 0 1-12 0v-18h-18a6 6 0 0 1 0-12h18V72a6 6 0 0 1 12 0v18h18a6 6 0 0 1 6 6m-94-42h10v10a6 6 0 0 0 12 0V54h10a6 6 0 0 0 0-12h-10V32a6 6 0 0 0-12 0v10h-10a6 6 0 0 0 0 12m71.25 100.28a6 6 0 0 1 1.07 6A94 94 0 1 1 95.76 39.68a6 6 0 0 1 7.94 6.79A90.11 90.11 0 0 0 192 154a91 91 0 0 0 17.53-1.7a6 6 0 0 1 5.72 1.98m-14.37 11.34q-4.42.38-8.88.38A102.12 102.12 0 0 1 90 64q0-4.45.38-8.88a82 82 0 1 0 110.5 110.5"></path></svg>';
+
+      if (themeButton) {
+        themeButton.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          const isDarkMode =
+            document.documentElement.classList.contains("dark");
+          localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+          themeButton.innerHTML = isDarkMode ? sunIcon : moonIcon;
+        });
+
+        themeButton.innerHTML = document.documentElement.classList.contains(
+          "dark"
+        )
+          ? sunIcon
+          : moonIcon;
+      }
+    </script>
   </body>
 </html>

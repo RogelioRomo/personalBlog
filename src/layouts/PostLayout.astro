@@ -5,10 +5,10 @@ const { title } = Astro.props;
 ---
 
 <BodyLayout title={title}>
-  <a class="text-customGreen text-base font-bold" href="/blog" id="btn-back"
+  <a class="text-customGreen text-base font-bold" href="/blog/1" id="btn-back"
     >Go back</a
   >
-  <section class="text-customGray mt-4">
+  <section class="text-customGray dark:text-customBlack mt-4">
     <slot />
   </section>
 </BodyLayout>

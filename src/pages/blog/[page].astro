@@ -1,14 +1,21 @@
 ---
+import type { GetStaticPaths } from "astro";
 import TypedBlogPost from "@components/posts/TypedBlogPost.astro";
 import BodyLayout from "@layouts/BodyLayout.astro";
 import { getCollection } from "astro:content";
+import TagsBox from "@components/posts/TagsBox.astro";
 
-const blogPosts = await getCollection("blog");
+export const getStaticPaths = (async ({ paginate }) => {
+  const blogPosts = await getCollection("blog");
+  return paginate(blogPosts, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
 ---
 
 <BodyLayout title="Blog">
   <section class="flex flex-row text-customGray dark:text-customBlack">
-    <div class="w-[75%]">
+    <div class="w-full">
       <div class="flex flex-row gap-4">
         <h2 class="mb-4 font-bold text-2xl">Posts</h2>
         <a class="text-customPink" href="/posts">
@@ -26,26 +33,28 @@ const blogPosts = await getCollection("blog");
         </a>
       </div>
       <ul class="text-customGray dark:text-customBlack flex flex-col gap-4">
-        {blogPosts.map((post) => <TypedBlogPost post={post} />)}
+        {page.data.map((post) => <TypedBlogPost post={post} />)}
       </ul>
-    </div>
-    <div class="w-[25%] flex flex-col gap-4">
-      <div class="flex flex-row gap-2">
-        <h3 class="font-bold text-xl">Tags</h3>
-        <img src="/src/assets/svg/tags.svg" alt="tags" width="20" height="20" />
-      </div>
-      <div>
-        <ul class="flex flex-wrap gap-2">
-          <li>
-            <a
-              class="underline decoration-2 hover:decoration-customPink"
-              href="">#test</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="self-end">
-        <a class="hover:text-customPink" href="/tags"> View all → </a>
+      <div class="flex flex-row gap-4 mt-6 justify-center">
+        <a
+          class="hover:text-customGreen cursor-pointer"
+          class:list={{
+            disabled: !page.url.prev,
+          }}
+          href={page.url.prev}
+        >
+          ← Previous
+        </a>
+        |
+        <a
+          class="hover:text-customGreen cursor-pointer"
+          class:list={{
+            disabled: !page.url.next,
+          }}
+          href={page.url.next}
+        >
+          Next →
+        </a>
       </div>
     </div>
   </section>

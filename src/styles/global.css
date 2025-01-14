@@ -3,3 +3,14 @@ html {
   @apply font-mono;
   scroll-behavior: smooth;
 }
+
+article h2 {
+  font-size: 1.1rem;
+  color: #e470d0;
+  font-weight: bold;
+}
+
+article h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}

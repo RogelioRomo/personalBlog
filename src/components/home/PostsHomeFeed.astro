@@ -3,14 +3,15 @@ import TypedBlogPost from "@components/posts/TypedBlogPost.astro";
 import { getCollection } from "astro:content";
 
 const blogPosts = await getCollection("blog");
+const limitedBlogPosts = blogPosts.slice(0, 4);
 ---
 
-<section class="mt-16">
-  <a class="font-bold text-xl text-customGreen" href="/blog"
+<section class="mt-10">
+  <a class="font-bold text-xl text-customGreen" href="/blog/1"
     ><h2 class="mb-4">Posts</h2></a
   >
 
-  <ul class="text-customGray flex flex-col gap-4">
-    {blogPosts.map((post) => <TypedBlogPost post={post} />)}
+  <ul class="text-customGray dark:text-customBlack flex flex-col gap-4">
+    {limitedBlogPosts.map((post) => <TypedBlogPost post={post} />)}
   </ul>
 </section>

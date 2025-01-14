@@ -25,9 +25,12 @@ const { Content } = await post.render();
     <h1 class="text-xl font-bold">{frontmatter.title}</h1>
     <h3 class="text-md">{frontmatter.date}</h3>
   </div>
-  <Content />
+  <article>
+    <Content />
+  </article>
   <div class="mt-4 flex justify-end">
-    <a class="text-base text-customPink font-bold" href="#btn-back">Go to top</a
+    <a class="text-base text-customPink font-bold mb-4" href="#btn-back"
+      >Go to top</a
     >
   </div>
 </PostLayout>

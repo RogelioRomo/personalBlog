@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+
+const blogPosts = await getCollection("blog");
+const tags = new Set(blogPosts.flatMap((post) => post.data.tags));
+const limitedTags = Array.from(tags).slice(0, 6);
+---
+
+<div class="w-[25%] flex flex-col gap-4">
+  <div class="flex flex-row gap-2">
+    <h3 class="font-bold text-xl">Tags</h3>
+    <img src="/src/assets/svg/tags.svg" alt="tags" width="20" height="20" />
+  </div>
+  <div>
+    <ul class="flex flex-wrap gap-2">
+      {
+        limitedTags.map((tag) => (
+          <li>
+            <a
+              class="underline decoration-2 hover:decoration-customPink"
+              href={`/tags/${tag}`}
+            >
+              #{tag}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="self-end">
+    <a class="hover:text-customPink" href="/tags"> View all → </a>
+  </div>
+</div>

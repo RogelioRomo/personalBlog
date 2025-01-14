@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 ---
 
-<header class="flex flex-row gap-6 mb-24">
+<header class="flex flex-row gap-6 mb-16">
   <div class="">
     <a href="/">
       <Image
@@ -15,7 +15,9 @@ import { Image } from "astro:assets";
   </div>
   <div class="flex flex-col gap-2">
     <a href="/">
-      <h2 class="text-customGray font-bold text-2xl">Rogelio's Blog</h2>
+      <h2 class="text-customGray dark:text-customBlack font-bold text-2xl">
+        Rogelio's Blog
+      </h2>
     </a>
     <nav>
       <ul class="text-customGreen font-200 flex flex-row gap-4">
@@ -26,28 +28,19 @@ import { Image } from "astro:assets";
           <a href="/about">About</a>
         </li>
         <li class="border-r-2 border-customGreen pr-4 hover:underline">
-          <a href="/blog">Blog</a>
+          <a href="/blog/1">Blog</a>
         </li>
         <li class="hover:underline">
-          <a href="/notes">Notes</a>
+          <a href="/notes/1">Notes</a>
         </li>
       </ul>
     </nav>
   </div>
   <div class="flex flex-row gap-2 items-start pt-4 ml-auto">
-    <button class="text-customGray hover:text-customGreen">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="38"
-        height="38"
-        viewBox="0 0 20 20"
-        ><path
-          fill="currentColor"
-          d="M8.5 3a5.5 5.5 0 0 1 4.227 9.02l4.127 4.126a.5.5 0 0 1-.638.765l-.07-.057l-4.126-4.127A5.5 5.5 0 1 1 8.5 3m0 1a4.5 4.5 0 1 0 0 9a4.5 4.5 0 0 0 0-9"
-        ></path></svg
-      >
-    </button>
-    <button class="text-customGray hover:text-customGreen">
+    <button
+      id="themeButton"
+      class="text-customGray hover:text-customGreen dark:text-customBlack dark:hover:text-customGreen"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="38"
