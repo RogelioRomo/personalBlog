@@ -11,5 +11,6 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   output: 'static',
   integrations: [vue(), tailwind()],
-  adapter: vercel()
+  adapter: vercel(),
+  site: 'https://rogelioromo-blog.vercel.app',
 });

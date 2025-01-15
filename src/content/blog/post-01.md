@@ -1,7 +1,7 @@
 ---
 title: My blog project
 date: 01-13-2025
-description: Explanation on what I did in this post using Astro
+description: Explanation on what I did in this website using Astro
 image: ''
 tags: [Astro]
 ---
