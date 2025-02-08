@@ -7,7 +7,10 @@ import TagsBox from "@components/posts/TagsBox.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const blogPosts = await getCollection("blog");
-  return paginate(blogPosts, { pageSize: 10 });
+  const sortedBlogPosts = blogPosts.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+  return paginate(sortedBlogPosts, { pageSize: 10 });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;

@@ -3,7 +3,10 @@ import TypedNotePost from "@components/notes/TypedNotePost.astro";
 import { getCollection } from "astro:content";
 
 const notesPosts = await getCollection("note");
-const limitedNotePosts = notesPosts.slice(0, 1);
+const sortedBlogNotes = notesPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+const limitedNotePosts = sortedBlogNotes.slice(0, 1);
 ---
 
 <section class="mt-10">

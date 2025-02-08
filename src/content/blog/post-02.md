@@ -6,7 +6,7 @@ image: ''
 tags: [Linux, Linux Mint]
 ---
 
-## A litle introduction
+## A little introduction
 
 <br/>
 
@@ -24,10 +24,10 @@ and selected a famous distro called Linux Mint.
 
 Well, the quick answer is just is simplicity, it's good for begginer Linux users, and it is
 a estable distro with a large community. I wanted a distro that was not that complicated to use
-since I planned to stay in that distro for a few years, if I were to choose something like Arch
+since I'm planning to stay in that distro for a few years, if I were to choose something like Arch
 I could have problems that would just ruined my first impressions and experience, so I just decided
 to choose Linux Mint between all the options. Also, not forgetting one of the reasons is that Mint
-is based on Debian, which is, for what I understand, a really good Linux environment with huge
+is based on Debian, which is, for what I understand, a really good estable Linux environment with huge
 documentations and support.
 
 <br/>
