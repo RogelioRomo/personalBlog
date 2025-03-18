@@ -1,6 +1,6 @@
 ---
 title: Emacs or Neovim
-date: 02-03-2025
+date: 03-17-2025
 description: Comparing Emacs and Neovim text editors
 image: ''
 tags: [Emacs, Neovim, text editor, Linux]
