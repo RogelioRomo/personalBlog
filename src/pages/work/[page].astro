@@ -1,0 +1,46 @@
+---
+import WorkCard from "@components/work/WorkCard.astro";
+import BodyLayout from "@layouts/BodyLayout.astro";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const projects = await getCollection("work");
+  const sortedProjects = projects.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+  return paginate(sortedProjects, { pageSize: 6 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<BodyLayout title="Work">
+  <section class="text-customGray dark:text-customBlack">
+    <h2 class="mb-6 font-bold text-2xl">Work</h2>
+    {page.data.map((project) => <WorkCard project={project} />)}
+  </section>
+  <div
+    class="flex flex-row gap-4 mt-4 justify-center text-customGray dark:text-customBlack"
+  >
+    <a
+      class="hover:text-customGreen cursor-pointer"
+      class:list={{
+        disabled: !page.url.prev,
+      }}
+      href={page.url.prev}
+    >
+      ← Previous
+    </a>
+    |
+    <a
+      class="hover:text-customGreen cursor-pointer"
+      class:list={{
+        disabled: !page.url.next,
+      }}
+      href={page.url.next}
+    >
+      Next →
+    </a>
+  </div>
+</BodyLayout>

@@ -1,0 +1,17 @@
+---
+import WorkCard from "@components/work/WorkCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("work");
+const sortedProjects = projects.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+const limitedProjects = sortedProjects.slice(0, 3);
+---
+
+<section class="mt-10">
+  <a class="font-bold text-xl text-customGreen" href="/work/1">
+    <h2 class="mb-6">Work</h2>
+  </a>
+  {limitedProjects.map((project) => <WorkCard project={project} />)}
+</section>

@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 interface Props {
   note: CollectionEntry<"note">;
@@ -8,7 +9,7 @@ interface Props {
 const { note } = Astro.props;
 const frontmatter = note.data;
 
-const { Content } = await note.render();
+const { Content } = await render(note);
 ---
 
 <div

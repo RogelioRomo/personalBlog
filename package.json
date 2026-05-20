@@ -9,11 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/tailwind": "^5.1.4",
-    "@astrojs/vercel": "^8.0.2",
-    "@astrojs/vue": "^5.0.4",
-    "astro": "^5.1.2",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^10.0.7",
+    "@astrojs/vue": "^6.0.1",
+    "astro": "^6.3.6",
     "tailwindcss": "^3.4.17",
     "vue": "^3.5.13"
   }
