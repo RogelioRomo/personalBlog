@@ -41,6 +41,8 @@ You create your own config files and you just tell Emacs where these file are an
 The short answer is yes. But for that to be true (in my opinion) you would need to be a super linux user, because these editors integrate the best with linux distros. As I said before, these are planned to be used for not only editing text, but also do a lot of stuff on your computer, so If you are not an user that has this type of workflow maybe you will not see the level
 of efficiency a lot of poeple say you have when using these editors. So in the end, for what I grasp, if you are a developer that only uses a text editor for coding purposes then you should be fine sticking with whatever text editor you're using at the moment, and also if your really like Emacs or Neovim just for editing code then go for it, because they are great for that, but dont expect really a lot of improve in efficiency if you are not willing to dive deep into their more advanced features.
 
+<br/>
+
 ## So which one I prefer?
 
 Honestly, after trying Emacs and Neovim, I like Emacs more than Neovim but VSCode overall. I'm not a heavy user on optimization in my workflow, so I just use text editors to code, thats why I prefer VSCode it's just faster to configure, and I like my workflow on it because I have my custom keybinds and custom visuals that allow me to enjoy it more. I will still be using all of them just to have them on my repertoir, but my main will still be VSCode.
