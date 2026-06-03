@@ -1,11 +1,11 @@
 ---
-import WorkCard from "@components/work/WorkCard.astro";
+import WorkCard from "@components/projects/WorkCard.astro";
 import BodyLayout from "@layouts/BodyLayout.astro";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const projects = await getCollection("work");
+  const projects = await getCollection("projects");
   const sortedProjects = projects.sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
@@ -15,9 +15,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<BodyLayout title="Work">
+<BodyLayout title="Projects">
   <section class="text-customGray dark:text-customBlack">
-    <h2 class="mb-6 font-bold text-2xl">Work</h2>
+    <h2 class="mb-6 font-bold text-2xl">Projects</h2>
     {page.data.map((project) => <WorkCard project={project} />)}
   </section>
   <div

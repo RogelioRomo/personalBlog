@@ -1,0 +1,157 @@
+---
+const experience = [
+  {
+    company: "Samsung Research Tijuana",
+    role: "Architecture Engineer",
+    period: "2024 — Present",
+    description: [
+      "Working on software architecture and engineering solutions within the research division.",
+      "Maintained and developed Bixby functionalities for Accessibility and Art content on TV's.",
+      "Developed a UART and SSH based internal tool that helps engineers to test and obtain data from TV's on the terminal.",
+    ],
+  },
+  {
+    company: "John Milton Web Page",
+    role: "Software Engineer - Freelance",
+    period: "2025 — 2026",
+    description: [
+      "Lead software engineer.",
+      "Ecommerce platform that sells digital products.",
+      "Audio products, built in audio player, live events, build on Next.js and fully customizable, using Strapi as a CMS backend, role based access, mailing services, newsletters, purchase details, etc..",
+    ],
+  },
+  {
+    company: "Preparatoria Federal Lázaro Cárdenas II Web Page",
+    role: "Software Engineer - Freelance",
+    period: "2026",
+    description: [
+      "A freelance project delivering a complete web solution for a highschool, role-based access control, and a publication page for events and comunication updates.",
+    ],
+  },
+];
+
+const skills = [
+  {
+    category: "Languages",
+    items: ["TypeScript", "C#", "C/C++", "Rust", "Python"],
+  },
+  {
+    category: "Frontend",
+    items: ["React", "Next.js", "Tanstack", "Astro"],
+  },
+  {
+    category: "Backend",
+    items: ["ASP.NET Core", "Entity Framework Core", "Node.js", "Tokio"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "SQLite", "MongoDB"],
+  },
+  {
+    category: "Tools",
+    items: ["Linux", "Docker", "NGINX"],
+  },
+];
+
+const education = [
+  {
+    institution: "CoderHouse",
+    degree: "Full-stack web developer",
+    period: "2023 — 2024",
+    description: [] as string[],
+  },
+  {
+    institution: "Universidad Autónoma de Baja California",
+    degree: "Bachelor's in Aerospace Engineering",
+    period: "2017 — 2021",
+    description: [] as string[],
+  },
+];
+---
+
+<div class="flex flex-col gap-12 mt-8">
+  <!-- Experience -->
+  <section>
+    <h2 class="text-xl font-bold mb-6">Experience</h2>
+    <div
+      class="relative border-l border-customGreen/30 ml-2 flex flex-col gap-8"
+    >
+      {
+        experience.map((job) => (
+          <div class="pl-6 relative">
+            <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-customGreen" />
+            <p class="text-xs text-customGreen/70 dark:text-customBlack/50 font-mono mb-1">
+              {job.period}
+            </p>
+            <p class="font-bold text-customGray dark:text-customBlack">
+              {job.role}
+            </p>
+            <p class="text-sm text-customGreen mb-2">{job.company}</p>
+            <ul class="text-sm text-customGray/80 dark:text-customBlack/70 leading-relaxed list-disc list-inside flex flex-col gap-1">
+              {job.description.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2 class="text-xl font-bold mb-6">Skills</h2>
+    <p class="mb-6">
+      These are some of my technical skills. I have worked with multiple other
+      technologies but listing them all would make the list to big.
+    </p>
+    <div class="flex flex-col gap-4">
+      {
+        skills.map((group) => (
+          <div class="flex flex-row gap-4 items-start">
+            <span class="text-xs text-customGray/50 dark:text-customBlack/40 font-mono w-24 shrink-0 pt-0.5">
+              {group.category}
+            </span>
+            <div class="flex flex-wrap gap-2">
+              {group.items.map((skill) => (
+                <span class="text-xs px-2.5 py-1 rounded-full bg-[#212326] dark:bg-gray-100 text-customGray dark:text-customBlack border border-customGreen/20">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <h2 class="text-xl font-bold mb-6">Education</h2>
+    <div
+      class="relative border-l border-customGreen/30 ml-2 flex flex-col gap-8"
+    >
+      {
+        education.map((edu) => (
+          <div class="pl-6 relative">
+            <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-customGreen" />
+            <p class="text-xs text-customGreen/70 dark:text-customBlack/50 font-mono mb-1">
+              {edu.period}
+            </p>
+            <p class="font-bold text-customGray dark:text-customBlack">
+              {edu.degree}
+            </p>
+            <p class="text-sm text-customGreen mb-2">{edu.institution}</p>
+            {edu.description.length > 0 && (
+              <ul class="text-sm text-customGray/80 dark:text-customBlack/70 leading-relaxed list-disc list-inside flex flex-col gap-1">
+                {edu.description.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</div>
