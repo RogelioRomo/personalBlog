@@ -4,13 +4,16 @@ import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
 const sortedProjects = projects.sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
 const limitedProjects = sortedProjects.slice(0, 3);
 ---
 
 <section class="mt-10">
-  <a class="font-bold text-xl text-customGreen" href="/projects/1">
+  <a
+    class="font-bold text-xl text-customGreen hover:underline"
+    href="/projects/1"
+  >
     <h2 class="mb-6">Projects</h2>
   </a>
   {limitedProjects.map((project) => <WorkCard project={project} />)}
