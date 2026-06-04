@@ -4,13 +4,13 @@ import { getCollection } from "astro:content";
 
 const notesPosts = await getCollection("note");
 const sortedBlogNotes = notesPosts.sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
 const limitedNotePosts = sortedBlogNotes.slice(0, 1);
 ---
 
 <section class="mt-10">
-  <a class="font-bold text-xl text-customGreen" href="/notes/1"
+  <a class="font-bold text-xl text-customGreen hover:underline" href="/notes/1"
     ><h2 class="mb-6">Notes</h2></a
   >
   {limitedNotePosts.map((note) => <TypedNotePost note={note} />)}
