@@ -2,21 +2,20 @@ import type { APIRoute } from 'astro';
 import rss from "@astrojs/rss";
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export const GET: APIRoute = async ({ params, request, site }) => {
+export const GET: APIRoute = async ({ site }) => {
   const blogPosts = await getCollection('blog');
   const notes = await getCollection('note');
 
   const items = [
-    ...blogPosts.map(({ data, slug }: CollectionEntry<'blog'>) => ({
+    ...blogPosts.map(({ data, id }: CollectionEntry<'blog'>) => ({
       title: data.title,
-      pubDate: data.date,
+      pubDate: new Date(data.date),
       description: data.description,
-      tags: data.tags,
-      link: `/posts/${slug}`
+      link: `/posts/${id}`
     })),
-    ...notes.map(({ data, slug }: CollectionEntry<'note'>) => ({
+    ...notes.map(({ data }: CollectionEntry<'note'>) => ({
       title: data.title,
-      pubDate: data.date,
+      pubDate: new Date(data.date),
       description: data.description,
       link: `/notes/1`
     }))
