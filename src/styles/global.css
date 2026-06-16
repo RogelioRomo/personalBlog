@@ -3,13 +3,151 @@ html {
   @apply font-mono;
 }
 
-article h2 {
-  font-size: 1.1rem;
-  color: #e470d0;
+/* ── Headings ─────────────────────────────────────────────── */
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
   font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+article h2 {
+  font-size: 1.4rem;
+  color: #e470d0;
 }
 
 article h3 {
+  font-size: 1.2rem;
+  color: #29bc89;
+}
+
+article h4 {
+  font-size: 1.1rem;
+  color: #29bc89;
+}
+
+article h5 {
   font-size: 1rem;
-  font-weight: bold;
+  color: #c8c9cb;
+}
+
+article h6 {
+  font-size: 0.875rem;
+  color: #c8c9cb;
+}
+
+.dark article h2 { color: #c240b0; }
+.dark article h3,
+.dark article h4 { color: #1a8a61; }
+.dark article h5,
+.dark article h6 { color: #6b7280; }
+
+/* ── Paragraphs ───────────────────────────────────────────── */
+article p {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+/* ── Lists ───────────────────────────────────────────────── */
+article ul {
+  list-style-type: disc;
+  margin: 0.75rem 0 1rem 1.5rem;
+}
+
+article ol {
+  list-style-type: decimal;
+  margin: 0.75rem 0 1rem 1.5rem;
+}
+
+article li {
+  line-height: 1.75;
+  margin-bottom: 0.25rem;
+}
+
+/* ── Blockquote ───────────────────────────────────────────── */
+article blockquote {
+  border-left: 3px solid #e470d0;
+  margin: 1.25rem 0;
+  padding: 0.5rem 1rem;
+  color: #a0a1a3;
+  font-style: italic;
+}
+
+.dark article blockquote {
+  border-left-color: #c240b0;
+  color: #555;
+}
+
+/* ── Inline code ─────────────────────────────────────────── */
+article :not(pre) > code {
+  background-color: #2a2d2e;
+  color: #29bc89;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.dark article :not(pre) > code {
+  background-color: #efefef;
+  color: #1a8a61;
+}
+
+/* ── Code blocks ─────────────────────────────────────────── */
+article pre {
+  background-color: #141617;
+  border: 1px solid #2e3235;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  line-height: 1.6;
+}
+
+article pre code {
+  background-color: transparent;
+  color: #c8c9cb;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.dark article pre {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.dark article pre code {
+  color: #1d1f20;
+}
+
+/* ── Horizontal rule ─────────────────────────────────────── */
+article hr {
+  border: none;
+  border-top: 1px solid #2e3235;
+  margin: 2rem 0;
+}
+
+.dark article hr {
+  border-top-color: #d1d5db;
+}
+
+/* ── Links ───────────────────────────────────────────────── */
+article a {
+  color: #29bc89;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+article a:hover {
+  color: #e470d0;
+}
+
+.dark article a {
+  color: #1a8a61;
+}
+
+.dark article a:hover {
+  color: #c240b0;
 }
