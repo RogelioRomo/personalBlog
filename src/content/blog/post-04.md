@@ -16,8 +16,6 @@ I've had a couple of projects that started last year and took a lot of afternoon
 of my time but those are pretty much over, just doing final touches, so I thought it was a good
 idea to come back and write about it. But nonetheless I'm back, indefinitely, but here again.
 
-<br/>
-
 ## Learning new stuff
 
 AI and new tech coming out every week, It's been kinda crazy being honest. The accelerated way
@@ -26,8 +24,6 @@ doing my stuff the way I like to do it and haven't felt that much pressure. And 
 wrong I've been learning a lot of that new tech and new AI way of working and trying and testing
 a lot of new tools, but I just do it for the same that I do all the other stuff I do; for the love
 of learning.
-
-<br/>
 
 ## Progress
 
