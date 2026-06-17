@@ -16,10 +16,7 @@ const limitedTags = Array.from(tags).slice(0, 6);
       {
         limitedTags.map((tag) => (
           <li>
-            <a
-              class="underline decoration-2 hover:decoration-customPink"
-              href={`/tags/${tag}`}
-            >
+            <a class="hover:text-customPink" href={`/tags/${tag}`}>
               #{tag}
             </a>
           </li>

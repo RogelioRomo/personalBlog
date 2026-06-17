@@ -16,12 +16,12 @@ and selected a famous distro called Linux Mint.
 
 ## Why Linux Mint?
 
-Well, the quick answer is just is simplicity, it's good for begginer Linux users, and it is
-a estable distro with a large community. I wanted a distro that was not that complicated to use
+Well, the quick answer is just is simplicity, it's good for beginner Linux users, and it is
+a stable distro with a large community. I wanted a distro that was not that complicated to use
 since I'm planning to stay in that distro for a few years, if I were to choose something like Arch
 I could have problems that would just ruined my first impressions and experience, so I just decided
 to choose Linux Mint between all the options. Also, not forgetting one of the reasons is that Mint
-is based on Debian, which is, for what I understand, a really good estable Linux environment with huge
+is based on Debian, which is, for what I understand, a really good stable Linux environment with huge
 documentations and support.
 
 ## So how has my experience been
@@ -41,7 +41,7 @@ it to Neovim, but that will come later this month. I'm still learning EMACS so i
 
 About the second point on why I things its a better OS for development. When you have been developing
 projects, you end up encountering problems related with Windows specifically, meaning you have to go
-around and look for solutions on the internet to make a package work or to twick the performance.
+around and look for solutions on the internet to make a package work or to resolve performance issues.
 
 On the other hand, you also encounter software that is not available on Windows and that you really
 want to use for a project or even if you just want to learn how to use it. But with Linux, its actually
@@ -49,13 +49,13 @@ the opposite, commonly packages are develop in a Unix/Linux environment, so once
 the package its already released on Linux. Even if the package is not even developed on Linux, authors
 commonly release Linux versions at the launch of their project because theres a huge demand for it.
 
-On a less serious topic, I also love the way you can freely customize you Linux enviroment the way you
+On a less serious topic, I also love the way you can freely customize you Linux environment the way you
 want, with not a lot of limitations. I'm currently running the Cinammon version of Linux Mint and it
 looks so good, just the way I like it.
 
 ## I'm done with Windows?
 
 Well, I will still be using Windows, because is installed on my main computer, and I have a lot of
-things set up, and videogames, that I am not willing to change to Linux. So for the tasks like learnig
-new stuff developmentwise, I will use the laptop. This way I can keep using both OS's without limiting
+things set up, and videogames, that I am not willing to change to Linux. So for the tasks like learning
+new stuff development wise, I will use the laptop. This way I can keep using both OS's without limiting
 myself to just one.

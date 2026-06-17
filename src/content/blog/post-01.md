@@ -15,7 +15,7 @@ sense. It's different to something like React, which to me can be very abstract 
 to put your brain to work.
 
 With Astro, you do basic things because the main focus is to build basic sites, like this one!
-And dont get me wrong, you can totally build complex stuff with Astro, but its not the main
+And don't get me wrong, you can totally build complex stuff with Astro, but its not the main
 focus since when you actually need work with complexity then you implement components with
 another frontend framework like React, Vue or any other supported by Astro.
 
@@ -40,7 +40,7 @@ actually maintain the performance when you have a lot of requests.
 How does .md files work with Astro? Like butter and bread. You have a built in structure you can
 follow to allocate your .md (or .mdx) files in a 'content' folder. This way Astro can figure out
 that you have files that need to be render on your site. You need a config file to build this logic
-which is called a 'collection' which creates a schema with the frontmatter of you .md files and then
+which is called a 'collection' which creates a schema with the frontmatter of your .md files and then
 you can practically use that data on every page or component you want. It's really easy and
 really cool.
 
