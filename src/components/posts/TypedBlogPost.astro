@@ -9,10 +9,12 @@ const { post } = Astro.props;
 const frontmatter = post.data;
 ---
 
-<li class="flex flex-row">
-  <p class="mr-16">{frontmatter.date}</p>
-  <a
-    class="underline decoration-2 hover:decoration-customPink"
-    href={`/posts/${post.id}`}>{frontmatter.title}</a
-  >
+<li class="flex flex-col gap-1">
+  <div class="flex flex-row">
+    <p class="mr-16">{frontmatter.date}</p>
+    <a
+      class="underline decoration-2 hover:decoration-customPink"
+      href={`/posts/${post.id}`}>{frontmatter.title}</a
+    >
+  </div>
 </li>

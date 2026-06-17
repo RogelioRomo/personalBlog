@@ -1,0 +1,35 @@
+---
+import BodyLayout from "@layouts/BodyLayout.astro";
+import { getCollection } from "astro:content";
+
+const blogPosts = await getCollection("blog");
+const tagMap = new Map<string, number>();
+
+for (const post of blogPosts) {
+  for (const tag of post.data.tags) {
+    tagMap.set(tag, (tagMap.get(tag) ?? 0) + 1);
+  }
+}
+
+const tags = Array.from(tagMap.entries()).sort((a, b) =>
+  a[0].localeCompare(b[0]),
+);
+---
+
+<BodyLayout title="Tags — Blog">
+  <section class="text-customGray dark:text-customBlack">
+    <h2 class="mb-6 font-bold text-2xl">Tags</h2>
+    <ul class="flex flex-wrap gap-3">
+      {
+        tags.map(([tag, count]) => (
+          <li>
+            <a class="hover:text-customPink" href={`/tags/${tag}`}>
+              #{tag}
+              <span class="opacity-60 no-underline">({count})</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BodyLayout>
