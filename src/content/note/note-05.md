@@ -3,7 +3,7 @@ title: Doom Emacs
 date: 06-26-2026
 description: Emacs flavor with good config
 ---
-## Using a notebook to dump my thoughts
+## Doom emacs is really good
 
 I've been trying Doom Emacs. I switched from my personal
 emacs config, just to see what is different, and I get the hype.
