@@ -23,8 +23,8 @@ export const GET: APIRoute = async ({ site }) => {
 
   return rss({
     stylesheet: '/styles/rss.xsl',
-    title: 'Rogelio’s Blog and Notes',
-    description: 'My personal blog and notes about my development journey and fun things!',
+    title: "Rogelio's Blog and Notes",
+    description: "My personal blog and notes about my development journey and fun things!",
     site: site ?? '',
     items,
     customData: `<language>en-us</language>`,
