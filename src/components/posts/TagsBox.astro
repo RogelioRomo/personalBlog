@@ -6,7 +6,7 @@ const tags = new Set(blogPosts.flatMap((post) => post.data.tags));
 const limitedTags = Array.from(tags).slice(0, 6);
 ---
 
-<div class="w-[25%] flex flex-col gap-4">
+<div class="w-full md:w-[25%] flex flex-col gap-4">
   <div class="flex flex-row gap-2">
     <h3 class="font-bold text-xl">Tags</h3>
     <svg
