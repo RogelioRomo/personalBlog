@@ -8,7 +8,7 @@ import TagsBox from "@components/posts/TagsBox.astro";
 export const getStaticPaths = (async ({ paginate }) => {
   const blogPosts = await getCollection("blog");
   const sortedBlogPosts = blogPosts.sort(
-    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
   );
   return paginate(sortedBlogPosts, { pageSize: 10 });
 }) satisfies GetStaticPaths;
@@ -17,8 +17,10 @@ const { page } = Astro.props;
 ---
 
 <BodyLayout title="Blog">
-  <section class="flex flex-row gap-8 text-customGray dark:text-customBlack">
-    <div class="flex-1">
+  <section
+    class="flex flex-col md:flex-row gap-8 text-customGray dark:text-customBlack"
+  >
+    <div class="w-full md:flex-1">
       <div class="flex flex-row gap-4">
         <h2 class="mb-4 font-bold text-2xl">Posts</h2>
         <a class="text-customPink" href="/rss.xml">
@@ -38,7 +40,7 @@ const { page } = Astro.props;
       <ul class="text-customGray dark:text-customBlack flex flex-col gap-4">
         {page.data.map((post) => <TypedBlogPost post={post} />)}
       </ul>
-      <div class="flex flex-row gap-4 mt-6 justify-center">
+      <div class="flex flex-row gap-4 mt-8 justify-center">
         <a
           class="hover:text-customGreen cursor-pointer"
           class:list={{
